@@ -151,21 +151,7 @@ The encryption key is derived from the user's password via PBKDF2-HMAC-SHA256 (3
 | T-SEC-08 | File tampering | Modified `.enc` byte | ✅ InvalidTag detected |
 | T-SEC-09 | Unauthorized access | Direct `.enc` access | ✅ Files unreadable |
 
----
 
-## Authors
-
-| Name | Student ID |
-|---|---|
-| Mekhaldi Mohamed Khalil | 222231395409 |
-| Hamouda Mohamed Radhi | 222231520907 |
-| Kohil Islam | 212131030358 |
-| Mesbout Lyna | 222231619816 |
-| Amar-Khodja Manyl | 212131043724 |
-
-**Supervisor:** Pr. Belkhir Abdelkader
-
----
 
 ## License
 
