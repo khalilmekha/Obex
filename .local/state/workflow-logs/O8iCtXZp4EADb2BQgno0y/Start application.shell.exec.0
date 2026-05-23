@@ -1,0 +1,11 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K3:05:25 PM [express] serving on port 5000
+3:05:35 PM [express] GET /api/auth/profile 304 in 2ms
+3:05:52 PM [express] GET /api/auth/profile 304 in 1ms
+3:05:52 PM [express] GET /api/files 401 in 1ms :: {"message":"Non autorisé"}
+3:06:36 PM [express] POST /api/auth/login 200 in 418ms :: {"message":"Connexion réussie","user":{"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":89262,"createdAt":"2026-03-09T14:55:37.990Z"}}
+3:06:36 PM [express] GET /api/auth/profile 200 in 6ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":89262,"createdAt":"2026-03-09T14:55:37.990Z"}
+3:06:36 PM [express] GET /api/files 304 in 4ms :: [{"id":1,"userId":1,"originalName":"Activite_Cybersecurite_Defence_Profondeur.docx","storedUuid":"8ef7822f-c054-4f5c-a18c-d48d1cedfa6b","sizeBytes":41590,"uploadDate":"2026-03-09T14:56:59.385Z"},{"id":2,"userId":1,"originalName":"corrige_cybersecurite.tex","storedUuid":"9943c743-31f6-420a-a94c-74f1031abdc0","sizeBytes":47672,"uploadDate":"2026-03-09T15:04:33.228Z"}]

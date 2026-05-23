@@ -1,0 +1,69 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K2:53:22 PM [express] serving on port 5000
+2:53:28 PM [express] GET /api/auth/profile 200 in 2ms
+2:53:28 PM [express] GET /api/files 401 in 0ms :: {"message":"Non autorisé"}
+2:54:43 PM [express] GET /api/auth/profile 200 in 1ms
+2:54:43 PM [express] GET /api/files 401 in 1ms :: {"message":"Non autorisé"}
+2:55:06 PM [express] POST /api/auth/login 401 in 17ms :: {"message":"Email ou mot de passe incorrect"}
+2:55:38 PM [express] POST /api/auth/register 201 in 410ms :: {"message":"Inscription réussie","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3NRMqid5lSIPF\nVI5SH5snI0f7HM68u3Pv/YqI1Sdx5N2RPOesn0pFATo2nbcUi7XTuddcH1yN/ttu\nH7MHae5ALhnAYfF07MtsalRnkP+g+DTtMhg6cBWR8SK+bvfH8qGr2lIEfoqxWTQz\nwOQ6LJo29PdeeDfFC5V2azCfO3K2gdUj7Ao2g4pDNy/cK5hCy4iIkX149q9YhiDr\n3IsCOpQzDS9HDmemq0VOZv+p+Z+yOZjy3MWaMBR0IMTY15bGup5HpZdYoLV9zoqB\nOVmhAQXAAxx13OKbp/sk73jN6hYyW3MrXSKu37yNlT/bvcd3cauHJBDHMcQU9qKp\n66IsTX2RAgMBAAECggEAGYSQvBjSa3CPfAWEQj+JPIkPPlR7njGM2zVJHbh0w0oh\nq1hcm4BfV5+tZEyQ4tF33Lrymm/61ANWvG65YLO6PeG97/wkZckSp3Hi+j7pwBm6\nQ3x5/++7LWX1FSm/JPAwYQ+qY1pdxoh6eyfnkgvC2htCNjwP5ofvxDv3XIJq/qz3\nvf0OVzzpWCcepLHuUTAgxzSHejRvvpsyW6/qEaBxJ68EdocAVpxs+3fNP0Fv1Ss/\n2G2bUaZITkrGQgi6LI9JaUucfo3jnOvPvYyUBbNUbqKoQQZXMi5++Qz7Jb055G9r\nHRt6b/fnS4CNUFiBcz0vmpo/da5EkcT9RhX47UZA/QKBgQDr+3aMv3WaL8gVBPzg\n2kBDXVOTrK+5NsAquDgscXGyJHQ55fX6kpQW4LoKIZQVS4sGzcR32qLCwepIBQWe\n7qNKsBtgDtb1QOBFJuH0w6lMGqoemSjy2uXn+J5zTMGWK2Zvo7F2MTCZJIHam01U\n9gpN0sBbZoET+JaAl+Qy7/Y07QKBgQDGv5AhZImtGmWqnhExIi5faqDmOQJi5T9K\npBDo3gw+6rdiDTiubwoaVI20Q5ABR7J2MXpiK/TVcQjSfuMMcSWRLRExyzfX19E7\npXNRT0A0tR0BxO6n+on+to7Br54zUfJ7O0KL7OhD5V/oKvDiWvbsvwBoOK9Vs0o8\nY2wUeAIatQKBgQCac1VePZmtNwTPrRoN2QsijBy9lNLWeJ1B2Jz7iayOmglwM7DR\nNcqzRpa9NskDPxRZeafTgkfxDJZYWOEa6rn5klX4gv3yO2oOGKrfVoiiBPm/WSNS\nAC9lqnWapWw262T6QLtPzlYuhZRwDiGJMBgCY6P+rpJhDd0DgWacaC5O6QKBgE5o\nfrUd087t7hP8ni2zHXZZO7b34MAhTvHkfiNQjqY3tTdCngz7E5JFr03hpatLnNVS\nOcUHMGUQXfmlQ2/CJ575l6H8WUCXDR2p7S+zw1HH7fSnu7ubdNt/LByvaws2FiKV\nw3Aue4dls4uFfVjfqDDIPaHgUxPNUsk2NApzOelNAoGAYhljrlMBL46w2uhw3Bjf\nJgst+Uei138CI9Zba3oAuuivqdiWJPORVU/IM/IAh7YfLLeB5ZfK7Cxs3JlKweh/\nMxorvyTYQEKvhHwdOVbJECJWbKeFjdhx/BgpaYrDM79MqQkzgcNPSFHa03AwdFq4\naVr/vup2vL0EsZRKgJn4260=\n-----END PRIVATE KEY-----\n","user":{"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-09T14:55:37.990Z"}}
+2:55:38 PM [express] GET /api/auth/profile 200 in 3ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-09T14:55:37.990Z"}
+2:56:40 PM [express] GET /api/auth/profile 200 in 10ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-09T14:55:37.990Z"}
+2:56:40 PM [express] GET /api/files 200 in 4ms :: []
+2:56:59 PM [express] POST /api/files/upload 201 in 197ms :: {"id":1,"userId":1,"originalName":"Activite_Cybersecurite_Defence_Profondeur.docx","storedUuid":"8ef7822f-c054-4f5c-a18c-d48d1cedfa6b","sizeBytes":41590,"uploadDate":"2026-03-09T14:56:59.385Z"}
+2:56:59 PM [express] GET /api/files 200 in 3ms :: [{"id":1,"userId":1,"originalName":"Activite_Cybersecurite_Defence_Profondeur.docx","storedUuid":"8ef7822f-c054-4f5c-a18c-d48d1cedfa6b","sizeBytes":41590,"uploadDate":"2026-03-09T14:56:59.385Z"}]
+2:56:59 PM [express] GET /api/auth/profile 200 in 11ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":41590,"createdAt":"2026-03-09T14:55:37.990Z"}
+2:57:29 PM [express] POST /api/files/1/download 400 in 11ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+2:58:01 PM [express] POST /api/auth/logout 200 in 1ms :: {"message":"Déconnecté"}
+2:58:19 PM [express] POST /api/auth/register 201 in 425ms :: {"message":"Inscription réussie","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQD4d0KUv4j3rucp\nfYPdz6PwcU/RBkYVfBSNjqrJIR9dBoNJaOg+hIVqpFZ2iI7JniMCSRFJDTUxjQCc\nP6ju3CdXn0g6Q0pea+nIUzaI5gdV7Ekuqp32cFF6Yd48LScJ/0LoCKGgqfvBlltU\nNU8H3sGewQBtBuI/owBb8F0mhtmZP0eCgp0lvY+MXRCdnIpKYKSEpEGRxX56WUx1\nsq5nVBA7cYM+wB+Qs9zc6D+BCqGcTOXXsmPvzJ3AsSYhHx4yq7Z7ZL0XWe2YAnJS\nI3ix9dC7fGN2ZPNxjsRe27idQxSzG8PKMLPvICXK0g9eRyQRDnyFWsTyDoU3LuuV\n+EqGtFTZAgMBAAECggEADimhHVC2HlUlRsmJY9I3QGg7EhlzEvwvwTpjvINzcdZi\nUyPEUjT0VGXx6j+CMRafHP0ce78hnDWS9nUP/G6G3REemTiW838f9CvfGMpQ2npV\nmQ//YUnZcRoFRIWX2zNmRUrhqKJrz+bxxYDk5HhTbcjHTQ+mg5VXWsY+jwjCfEBB\nAx3r/GP12/3M77TgHgzvqDDUUtoxSBUzhxBxIjFMz5adXnuoZ6yxDC9LrpKSjkXA\n4I6321WRpac4u39QjElYv5C7nzxsvhK70ofBG97ccwiFoszjiLvcyyAJNPLLR97Y\nCtwr96vgoShyjexuFuDLZAp5nH05c6l+jqS2AzZzAQKBgQD8jWg7QgKs4Rr/Ms4I\nRbvpp3lYUjiVZJnNBrzes3ycez3SfP77m3XPxd5/468rER/dMCNbpqDZjLcZ8yPc\n75jqsZsNhSvXpfooMPOCT7m1L70IZdleoAyq4mWW8cgMxx3sMaPxnwmb2CEpA3y7\n8D1t0tZ1NBJN8tPUQLOg7as/2QKBgQD725JjK5QDHMQZUJKkdY8e0ovnpqs772pk\n1ZxXXUJiJ6tR58/mKh+Q5/gaTiDjKi1XKvlwSuxt717nqgZjSdkQ9SAY2fPn4HBo\n8yOQ86OXORGa5Q/JKpp8Tm4S3lriL2YXAX8XNt8NYojC5kiCKlVCALoCzaE2gyzc\nk6vojkmdAQKBgQDiimm79gt2TfosfsMn0n2sKukDW8Wb5IC909Rpo/EcYMRk4nDK\n+3ljZeefKnp/lD3T6BFfbgmM+9dm9J3v2hB+PdCLATEBoMXTdY2JD8DSkT7soIeq\nhMC4LJraGonLRHVH4INiArnYzLd6FcG2x9oigGSU/5+HwlFXbK50pZzeiQKBgQDv\ntcRWbxuo+rAKCA4KSXm2tF5EVPWVTgHNhyIOZMzR7z+37RKK1nzExoP1RXc3vuT4\nmgZfQnBVEgcaJ1F9HsRix2uNO6RRheR3fzLSu5FwVPjUnD+yD8KJnXxWqRuHO+XG\n772usqMJckcIeXV5riEHePmRwXU3FRKVvldYOFUIAQKBgDC6oH6OWwPo9Zp1JkhV\nYTuM2YfCnWI5FCo1r0yEiGP0ktV4tXiLuUZCcmUOBhUA5TKz0bbxkDfZBoKhIRFQ\n+knTyCbLCXPh8h7XEEL/CzafNSqSVmC9fcYjqN6EQ3aCP9cbzS742CX8MjuIbmsQ\nviNQ7XH19Xexbv5JCQdRnIFg\n-----END PRIVATE KEY-----\n","user":{"id":2,"email":"radhi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+HdClL+I967nKX2D3c+j\n8HFP0QZGFXwUjY6qySEfXQaDSWjoPoSFaqRWdoiOyZ4jAkkRSQ01MY0AnD+o7twn\nV59IOkNKXmvpyFM2iOYHVexJLqqd9nBRemHePC0nCf9C6AihoKn7wZZbVDVPB97B\nnsEAbQbiP6MAW/BdJobZmT9HgoKdJb2PjF0QnZyKSmCkhKRBkcV+ellMdbKuZ1QQ\nO3GDPsAfkLPc3Og/gQqhnEzl17Jj78ydwLEmIR8eMqu2e2S9F1ntmAJyUiN4sfXQ\nu3xjdmTzcY7EXtu4nUMUsxvDyjCz7yAlytIPXkckEQ58hVrE8g6FNy7rlfhKhrRU\n2QIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-09T14:58:19.376Z"}}
+2:58:20 PM [express] GET /api/auth/profile 200 in 2ms :: {"id":2,"email":"radhi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+HdClL+I967nKX2D3c+j\n8HFP0QZGFXwUjY6qySEfXQaDSWjoPoSFaqRWdoiOyZ4jAkkRSQ01MY0AnD+o7twn\nV59IOkNKXmvpyFM2iOYHVexJLqqd9nBRemHePC0nCf9C6AihoKn7wZZbVDVPB97B\nnsEAbQbiP6MAW/BdJobZmT9HgoKdJb2PjF0QnZyKSmCkhKRBkcV+ellMdbKuZ1QQ\nO3GDPsAfkLPc3Og/gQqhnEzl17Jj78ydwLEmIR8eMqu2e2S9F1ntmAJyUiN4sfXQ\nu3xjdmTzcY7EXtu4nUMUsxvDyjCz7yAlytIPXkckEQ58hVrE8g6FNy7rlfhKhrRU\n2QIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-09T14:58:19.376Z"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m2:59:52 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/auth/PrivateKeyModal.tsx, /src/index.css[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:00:13 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Login.tsx, /src/index.css[22m

@@ -1,0 +1,14 @@
+[1G[0K⠙[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠙[1G[0K11:04:46 AM [express] serving on port 5000
+11:04:56 AM [express] GET /api/files 401 in 2ms :: {"message":"Non autorisé"}
+11:04:56 AM [express] GET /api/auth/profile 200 in 2ms
+
+
+
+
+
+
+[1;1H[0J[2m11:07:44 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/auth/PrivateKeyModal.tsx, /src/index.css[22m

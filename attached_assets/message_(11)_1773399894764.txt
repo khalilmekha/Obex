@@ -1,0 +1,156 @@
+import crypto from "crypto";
+
+
+
+const ENCRYPTED_KEY_SIZE = 256; // Clé AES chiffrée par RSA-2048 = 256 octets
+const NONCE_SIZE         = 12;  // Nonce AES-GCM standard = 12 octets
+const TAG_SIZE           = 16;  // Tag d'authentification GCM = 16 octets
+const AES_KEY_SIZE       = 32;  // Clé AES-256 = 32 octets
+
+// Offset de début de chaque section dans le fichier .enc
+const OFFSET_ENCRYPTED_KEY = 0;
+const OFFSET_NONCE         = ENCRYPTED_KEY_SIZE;                   // 256
+const OFFSET_TAG           = ENCRYPTED_KEY_SIZE + NONCE_SIZE;      // 268
+const OFFSET_DATA          = ENCRYPTED_KEY_SIZE + NONCE_SIZE + TAG_SIZE; // 284
+
+// ──────────────────────────────────────────────────────────
+// GÉNÉRATION DES CLÉS RSA
+// Identique à l'ancien fichier — aucun changement ici
+// ──────────────────────────────────────────────────────────
+
+export function generateKeys() {
+  const { publicKey, privateKey } = crypto.generateKeyPairSync("rsa", {
+    modulusLength: 2048,
+    publicKeyEncoding: {
+      type: "spki",
+      format: "pem",
+    },
+    privateKeyEncoding: {
+      type: "pkcs8",
+      format: "pem",
+    },
+  });
+  return { publicKey, privateKey };
+}
+
+// ──────────────────────────────────────────────────────────
+// CHIFFREMENT — encryptBuffer
+// Remplace l'ancien encryptBuffer qui faisait du RSA pur par blocs
+// ──────────────────────────────────────────────────────────
+
+export function encryptBuffer(buffer: Buffer, publicKeyPem: string): Buffer {
+
+  // ÉTAPE 1 : Générer une clé AES-256 aléatoire (32 octets)
+  // Cette clé est unique pour chaque fichier uploadé.
+  // Elle ne sera jamais stockée en clair — seulement sous forme chiffrée par RSA.
+  const aesKey = crypto.randomBytes(AES_KEY_SIZE);
+
+  // ÉTAPE 2 : Générer un nonce aléatoire (12 octets)
+  // Le nonce (Number used ONCE) garantit que même si deux fichiers identiques
+  // sont uploadés, leurs versions chiffrées seront complètement différentes.
+  const nonce = crypto.randomBytes(NONCE_SIZE);
+
+  // ÉTAPE 3 : Chiffrer le fichier avec AES-256-GCM
+  // createCipheriv("aes-256-gcm", clé, nonce) initialise le cipher AES en mode GCM.
+  // GCM (Galois/Counter Mode) produit automatiquement un tag d'authentification
+  // qui permet de détecter toute modification du fichier chiffré.
+  const cipher = crypto.createCipheriv("aes-256-gcm", aesKey, nonce);
+
+  // cipher.update() chiffre les données principales
+  // cipher.final() finalise et retourne les derniers octets éventuels
+  const encryptedData = Buffer.concat([
+    cipher.update(buffer),
+    cipher.final(),
+  ]);
+
+  // cipher.getAuthTag() retourne le tag GCM de 16 octets.
+  // Ce tag est calculé sur l'ensemble des données chiffrées.
+  // Si quelqu'un modifie le fichier .enc, ce tag ne correspondra plus → erreur.
+  const tag = cipher.getAuthTag();
+
+  // ÉTAPE 4 : Chiffrer la clé AES avec RSA-OAEP
+  // Seulement 32 octets passent par RSA (au lieu de tout le fichier).
+  // C'est la clé du principe hybride : RSA protège la clé AES,
+  // AES protège les données.
+  const encryptedAesKey = crypto.publicEncrypt(
+    {
+      key: publicKeyPem,
+      padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+    },
+    aesKey
+  );
+
+  // ÉTAPE 5 : Assembler le fichier .enc final
+  // On concatène dans l'ordre : clé chiffrée | nonce | tag | données chiffrées
+  // Le déchiffrement sait exactement où trouver chaque partie grâce aux offsets fixes.
+  return Buffer.concat([
+    encryptedAesKey, // 256 octets — clé AES chiffrée par RSA
+    nonce,           //  12 octets — nonce AES-GCM
+    tag,             //  16 octets — tag d'authentification GCM
+    encryptedData,   //   N octets — fichier chiffré par AES
+  ]);
+}
+
+// ──────────────────────────────────────────────────────────
+// DÉCHIFFREMENT — decryptBuffer
+// Remplace l'ancien decryptBuffer qui faisait du RSA pur par blocs
+// ──────────────────────────────────────────────────────────
+
+export function decryptBuffer(buffer: Buffer, privateKeyPem: string): Buffer {
+
+  // Vérification minimale : le fichier doit au moins contenir le header
+  const MIN_SIZE = OFFSET_DATA; // 256 + 12 + 16 = 284 octets
+  if (buffer.length < MIN_SIZE) {
+    throw new Error(
+      `Fichier corrompu : taille ${buffer.length} octets (minimum attendu : ${MIN_SIZE})`
+    );
+  }
+
+  // ÉTAPE 1 : Extraire la clé AES chiffrée (octets 0 → 255)
+  const encryptedAesKey = buffer.subarray(OFFSET_ENCRYPTED_KEY, OFFSET_NONCE);
+
+  // ÉTAPE 2 : Déchiffrer la clé AES avec la clé privée RSA
+  // C'est la seule opération RSA du déchiffrement — sur 256 octets seulement.
+  let aesKey: Buffer;
+  try {
+    aesKey = crypto.privateDecrypt(
+      {
+        key: privateKeyPem,
+        padding: crypto.constants.RSA_PKCS1_OAEP_PADDING,
+      },
+      encryptedAesKey
+    ) as Buffer;
+  } catch {
+    throw new Error("Clé privée invalide ou fichier corrompu.");
+  }
+
+  // ÉTAPE 3 : Extraire le nonce (octets 256 → 267)
+  const nonce = buffer.subarray(OFFSET_NONCE, OFFSET_TAG);
+
+  // ÉTAPE 4 : Extraire le tag d'authentification (octets 268 → 283)
+  const tag = buffer.subarray(OFFSET_TAG, OFFSET_DATA);
+
+  // ÉTAPE 5 : Extraire les données chiffrées (octets 284 → fin)
+  const encryptedData = buffer.subarray(OFFSET_DATA);
+
+  // ÉTAPE 6 : Déchiffrer les données avec AES-256-GCM
+  // createDecipheriv initialise le déchiffreur AES avec la même clé et le même nonce.
+  const decipher = crypto.createDecipheriv("aes-256-gcm", aesKey, nonce);
+
+  // setAuthTag() fournit le tag GCM au déchiffreur.
+  // Si les données ont été modifiées, decipher.final() lèvera une exception
+  // "Unsupported state or unable to authenticate data" — c'est le mécanisme d'intégrité.
+  decipher.setAuthTag(tag);
+
+  try {
+    const decryptedData = Buffer.concat([
+      decipher.update(encryptedData),
+      decipher.final(), // ← Lance une erreur si le tag GCM ne correspond pas
+    ]);
+    return decryptedData;
+  } catch {
+    throw new Error(
+      "Déchiffrement impossible : fichier modifié ou clé privée incorrecte."
+    );
+  }
+}

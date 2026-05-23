@@ -1,0 +1,135 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K3:00:25 PM [express] serving on port 5000
+3:00:47 PM [express] GET /api/auth/profile 200 in 2ms
+3:01:02 PM [express] GET /api/auth/profile 200 in 1ms
+3:01:02 PM [express] GET /api/files 401 in 1ms :: {"message":"Non autorisé"}
+3:04:16 PM [express] POST /api/auth/login 200 in 396ms :: {"message":"Connexion réussie","user":{"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":41590,"createdAt":"2026-03-09T14:55:37.990Z"}}
+3:04:16 PM [express] GET /api/auth/profile 200 in 3ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":41590,"createdAt":"2026-03-09T14:55:37.990Z"}
+3:04:16 PM [express] GET /api/files 304 in 2ms :: [{"id":1,"userId":1,"originalName":"Activite_Cybersecurite_Defence_Profondeur.docx","storedUuid":"8ef7822f-c054-4f5c-a18c-d48d1cedfa6b","sizeBytes":41590,"uploadDate":"2026-03-09T14:56:59.385Z"}]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:04:19 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Login.tsx, /src/pages/Register.tsx, /src/pages/Dashboard.tsx, /src/components/layout/Navbar.tsx[22m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:04:21 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Login.tsx, /src/pages/Register.tsx, /src/pages/Dashboard.tsx, /src/components/layout/Navbar.tsx[22m [33m(x2)[39m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:04:23 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/Login.tsx, /src/pages/Register.tsx, /src/pages/Dashboard.tsx, /src/components/layout/Navbar.tsx[22m [33m(x3)[39m
+3:04:33 PM [express] POST /api/files/upload 201 in 229ms :: {"id":2,"userId":1,"originalName":"corrige_cybersecurite.tex","storedUuid":"9943c743-31f6-420a-a94c-74f1031abdc0","sizeBytes":47672,"uploadDate":"2026-03-09T15:04:33.228Z"}
+3:04:33 PM [express] GET /api/files 200 in 4ms :: [{"id":1,"userId":1,"originalName":"Activite_Cybersecurite_Defence_Profondeur.docx","storedUuid":"8ef7822f-c054-4f5c-a18c-d48d1cedfa6b","sizeBytes":41590,"uploadDate":"2026-03-09T14:56:59.385Z"},{"id":2,"userId":1,"originalName":"corrige_cybersecurite.tex","storedUuid":"9943c743-31f6-420a-a94c-74f1031abdc0","sizeBytes":47672,"uploadDate":"2026-03-09T15:04:33.228Z"}]
+3:04:33 PM [express] GET /api/auth/profile 200 in 12ms :: {"id":1,"email":"khalil@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzUTKoneZUiDxVSOUh+b\nJyNH+xzOvLtz7/2KiNUnceTdkTznrJ9KRQE6Np23FIu107nXXB9cjf7bbh+zB2nu\nQC4ZwGHxdOzLbGpUZ5D/oPg07TIYOnAVkfEivm73x/Khq9pSBH6KsVk0M8DkOiya\nNvT3Xng3xQuVdmswnztytoHVI+wKNoOKQzcv3CuYQsuIiJF9ePavWIYg69yLAjqU\nMw0vRw5npqtFTmb/qfmfsjmY8tzFmjAUdCDE2NeWxrqeR6WXWKC1fc6KgTlZoQEF\nwAMcddzim6f7JO94zeoWMltzK10irt+8jZU/273Hd3GrhyQQxzHEFPaiqeuiLE19\nkQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":89262,"createdAt":"2026-03-09T14:55:37.990Z"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:04:44 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+3:04:46 PM [express] POST /api/auth/logout 200 in 1ms :: {"message":"Déconnecté"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m3:04:50 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/Navbar.tsx, /src/index.css[22m

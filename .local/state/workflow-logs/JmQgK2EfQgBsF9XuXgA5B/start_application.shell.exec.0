@@ -1,0 +1,63 @@
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K11:07:51 AM [express] serving on port 5000
+11:07:59 AM [express] GET /api/auth/profile 200 in 2ms
+11:07:59 AM [express] GET /api/files 401 in 0ms :: {"message":"Non autorisé"}
+11:08:03 AM [express] GET /api/auth/profile 304 in 1ms
+11:08:03 AM [express] GET /api/files 401 in 1ms :: {"message":"Non autorisé"}
+11:09:10 AM [express] GET /api/auth/profile 200 in 1ms
+11:09:37 AM [express] POST /api/auth/register 201 in 906ms :: {"message":"Inscription réussie","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZ1tZU0Uo1RvbN\nBhFa0bzFJBe2qeSqNWzJL3YJKcaZh948dYdzTE3wDSBTOZK5oalP6I/zJp2I0gJN\nvbbdsRc1/zb2rscjlPxUoewRB4ZAzJEmXsOJIVS1Kbr7H7GNJfrY2Q1HnaPfdArc\nPFJTKVIJVoAWwjK+iFZN2Plvy0V5s0d3yEUHSuGU6DH1Em5r6kuJwGutbUMnk5nQ\nmtfbqwy+0/gtsqJX4E/yLswbJZ+QPoCf7ncO9OM/c4eH2wFRDHZJX8UMNoteDLzT\ntUT+T1YPOZ8k3Vokd/j/vXzyD6GD0s3ln4KXDQb+WjA238Q6QnXtGcAptEhMUopC\nzcGwpkvzAgMBAAECggEAFZ+F4XFyyHRLYlv/pSVP2YyOLLr1N3C/nrOmF/mgPu+Y\nWXp86cQy5ufhavFFDK81Y372eiCBChHYCGH/HxVc2YEgPPd/aXfv07GCwzish9Uj\nyHc6GBSa7xqI0UgOJnR32B0CFIE1icX/dMn3GatNgEnWl9xUp5qgOYb4NdzQzMnM\npnhx7F0E4G4pRgQo9DK7pvN+Cjr9UDvri9GGlD3ntUWcXla+ImE+AJbCmA8NGGtz\nRXfMXZpqrqwIU6a6hr8NFHZ43hgd+szuJRldu/EZuhxKwS+r47Ujm/OMSQeGk6+J\nNhnKqQBM3ecefXZpLPVhl5ht1V9hu3RsQP1OKr37+QKBgQDUBnu+W81I7LVv+KYI\npZm1KqY+S78BdMi1Lz8RNM7ZU9FTEbU66Y2ViLclCnhWcqU5qiM6wNGgybCWbvzQ\nLUS9ag/QVi4CnJ2mxwX+GFrQIRka5JDvjMQW+AYtackj/10t/hvkzOuUiArocHHk\nMbbg8M93VB6qxVsb6TLphKpuJwKBgQC5vvQCsk0MXZjqdo1ZXFkFfPITSM6bzKQM\nLxb96my+D8X8zzNeteIlZvRMeNZryRcTjwC80UUvLhGsXFL0cyv8sgtSZZRK1KPQ\n7tK3BDlXriulXVP97dp+f9U+fWCYyvrwrxSBhdTEPrW5m9jchX71edk/Sf6KmNAu\nEU4qRh8fVQKBgQCTKoDfqza9JFf3hV4xaEhdQGItoUPNzfK2GDotRjtBC/WiNAtX\n/d5haYi9tBu83Uyjzt0vHcEjWnswn47pLFKnKqQZVogPFggzR7d4HA2Eo0SarwWO\n0GUXEEaxZNjRHKHfl55i3H20Fg2EMvBKlNs8HMnUKNY0cFIB+IZ3IbduRwKBgAjW\nSumt7fh+o33UMhlkSV/3d9TvC9VhwRRLUT63XoEUYwkKGpmQ8bdx1IGm5hyurohh\nr1lMY4xBFtoqck/rAta86cj7yDhfMYQJOME4VDoVsUHm1M4p+NE3579XW7cpQRMe\nYU1gPqUvjpnMDl8/grDPIUTfklqpto3aiOt99pEZAoGBAM8wj6oJLy1gqeUJuhmZ\neMfUAdfqABOj4Ifz3dFc8AXb9lnx5cxGL/kUIa2jcfR/L+nT87wSVNJ3zu+VA7W6\ns0yWD7Kq+Tlt05mN8ag2lpKctM3sI4y/WRCMQu+DkbQraYcBpJ1Xn/YnBp4RQzQ2\nyiTXiflFHMxMUXQgqsWlN1AI\n-----END PRIVATE KEY-----\n","user":{"id":4,"email":"hamoudi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmdbWVNFKNUb2zQYRWtG8\nxSQXtqnkqjVsyS92CSnGmYfePHWHc0xN8A0gUzmSuaGpT+iP8yadiNICTb223bEX\nNf829q7HI5T8VKHsEQeGQMyRJl7DiSFUtSm6+x+xjSX62NkNR52j33QK3DxSUylS\nCVaAFsIyvohWTdj5b8tFebNHd8hFB0rhlOgx9RJua+pLicBrrW1DJ5OZ0JrX26sM\nvtP4LbKiV+BP8i7MGyWfkD6An+53DvTjP3OHh9sBUQx2SV/FDDaLXgy807VE/k9W\nDzmfJN1aJHf4/7188g+hg9LN5Z+Clw0G/lowNt/EOkJ17RnAKbRITFKKQs3BsKZL\n8wIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-13T11:09:37.158Z"}}
+11:09:37 AM [express] GET /api/auth/profile 200 in 3ms :: {"id":4,"email":"hamoudi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmdbWVNFKNUb2zQYRWtG8\nxSQXtqnkqjVsyS92CSnGmYfePHWHc0xN8A0gUzmSuaGpT+iP8yadiNICTb223bEX\nNf829q7HI5T8VKHsEQeGQMyRJl7DiSFUtSm6+x+xjSX62NkNR52j33QK3DxSUylS\nCVaAFsIyvohWTdj5b8tFebNHd8hFB0rhlOgx9RJua+pLicBrrW1DJ5OZ0JrX26sM\nvtP4LbKiV+BP8i7MGyWfkD6An+53DvTjP3OHh9sBUQx2SV/FDDaLXgy807VE/k9W\nDzmfJN1aJHf4/7188g+hg9LN5Z+Clw0G/lowNt/EOkJ17RnAKbRITFKKQs3BsKZL\n8wIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-13T11:09:37.158Z"}
+11:09:43 AM [express] GET /api/files 200 in 4ms :: []
+11:09:58 AM [express] POST /api/files/upload 201 in 2513ms :: {"id":4,"userId":4,"originalName":"project_web.pdf","storedUuid":"840d86f4-75ec-4654-ad3e-baa478019a19","sizeBytes":185277,"uploadDate":"2026-03-13T11:09:58.218Z"}
+11:09:58 AM [express] GET /api/files 200 in 2ms :: [{"id":4,"userId":4,"originalName":"project_web.pdf","storedUuid":"840d86f4-75ec-4654-ad3e-baa478019a19","sizeBytes":185277,"uploadDate":"2026-03-13T11:09:58.218Z"}]
+11:09:58 AM [express] GET /api/auth/profile 200 in 2ms :: {"id":4,"email":"hamoudi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmdbWVNFKNUb2zQYRWtG8\nxSQXtqnkqjVsyS92CSnGmYfePHWHc0xN8A0gUzmSuaGpT+iP8yadiNICTb223bEX\nNf829q7HI5T8VKHsEQeGQMyRJl7DiSFUtSm6+x+xjSX62NkNR52j33QK3DxSUylS\nCVaAFsIyvohWTdj5b8tFebNHd8hFB0rhlOgx9RJua+pLicBrrW1DJ5OZ0JrX26sM\nvtP4LbKiV+BP8i7MGyWfkD6An+53DvTjP3OHh9sBUQx2SV/FDDaLXgy807VE/k9W\nDzmfJN1aJHf4/7188g+hg9LN5Z+Clw0G/lowNt/EOkJ17RnAKbRITFKKQs3BsKZL\n8wIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":185277,"createdAt":"2026-03-13T11:09:37.158Z"}
+11:10:27 AM [express] POST /api/files/4/download 400 in 12ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+11:10:58 AM [express] POST /api/files/4/download 400 in 11ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+11:11:04 AM [express] POST /api/files/4/download 400 in 3ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+11:11:17 AM [express] POST /api/files/4/download 400 in 11ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+11:11:32 AM [express] POST /api/files/4/download 400 in 12ms :: {"message":"Clé privée invalide ou fichier corrompu"}
+11:12:07 AM [express] DELETE /api/files/4 200 in 141ms :: {"message":"Fichier supprimé"}
+11:12:08 AM [express] GET /api/files 200 in 2ms :: []
+11:12:08 AM [express] GET /api/auth/profile 200 in 4ms :: {"id":4,"email":"hamoudi@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmdbWVNFKNUb2zQYRWtG8\nxSQXtqnkqjVsyS92CSnGmYfePHWHc0xN8A0gUzmSuaGpT+iP8yadiNICTb223bEX\nNf829q7HI5T8VKHsEQeGQMyRJl7DiSFUtSm6+x+xjSX62NkNR52j33QK3DxSUylS\nCVaAFsIyvohWTdj5b8tFebNHd8hFB0rhlOgx9RJua+pLicBrrW1DJ5OZ0JrX26sM\nvtP4LbKiV+BP8i7MGyWfkD6An+53DvTjP3OHh9sBUQx2SV/FDDaLXgy807VE/k9W\nDzmfJN1aJHf4/7188g+hg9LN5Z+Clw0G/lowNt/EOkJ17RnAKbRITFKKQs3BsKZL\n8wIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-13T11:09:37.158Z"}
+11:12:11 AM [express] POST /api/auth/logout 200 in 2ms :: {"message":"Déconnecté"}
+11:12:42 AM [express] POST /api/auth/register 201 in 371ms :: {"message":"Inscription réussie","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDdWtEZMhBke2J9\noHaR+qCOUKduDsUclRAnL+d82jhN6MgL4EnPhiqSaeo5bM2GlbX1Heb+xeqoZl49\nSWY89dsciECxNq45H60WBPLCvq0eBtBJcIZBXIDFrmSGyQE2QW3mkfjimcVSBE9t\n0j+bvvlERbBGh8ppw0ViQn3SuzIc3376r9E9HK9QSUxdfW12RGmFWaGGXclHWuU9\ngJLJ2E4a3alIIajpPM4BU7AUVIIJcH3+n2VYEH0frv7cMZ6fr+VVBgqt1fxq7yag\njihQt/4aoM7Y5XRJ8joy5FbmBeh78uZAsPp2gYBD0cDaimd9QNhLV3bauxrdaq57\niqgBNxglAgMBAAECggEANZfk84g7DtEO3iLJQnvffsWJXCzITazLnelLz19YbYiU\nUsfJpyyxRwTM2H1+33yE8yV7xaiusXojjAwm7FCMbgKRQzbdhOgl9KRbEIqxCImW\nyYksgEvAw9v+6+Fj4TqDPOWP0HFxpHN1tb3Hd9KLsJt82/7Jo8TLGkjGBQ0cy39f\nxOoRsG0E08emGl3JK4qu9KzxkeTGKA3lYnnV3ngM3zYmtzMYrNlb2Wha37D95+7i\nhZiRJlJ7z7ApBR5yHhrjtUSjnZV1M6DkSGFVgn6XS+0FatseRFWMu2NLzT98bcvI\nm+kvFt4H58Dklj9d+TeckU2LrmxsR/j2hCXxqymgSwKBgQD/Z9xzaXhr8LZ4lPX2\nSv3XBNLJAdgJhSpaHOAGKHo+gIvyPoP1mwmU8+wR4bwIJ7ao6OZ/DyBR2/2TPppu\nMM5FcGiEMjEALCctqr6vfM6rBM1Qrg2ZTZW/mk+/AuD7ZVGVU+mlA+MmtX17pC9s\naNn/CCBAyurbnLXil66jlQcMKwKBgQDd3qwergwHy5Bw/ztg+uSyomiwJ20ORohi\nRWqRnFfWAGmLpgztcZzg7zMIs/De3PpZ9BcfuOtb6ZyMVo4LsjLeTafYOnapQKjB\nYjPCoCtYvWSJV4Q9szTUWSil+rHVjZBL899pxnaFBfzBlYMcDB+z9HlJX8tMgAjm\nr6r5XH407wKBgHiTtAPYmz16Wur6iFRKeyRz5n93G2MDN0drsme13GB9l5Q551qg\nYxmrPpwCkh7XgOila4w4u+1pioFlYMr8x6UIuI8QkwmdzrFEltmKdpdOoQ+h3FGv\nyy61z0hCN6z33Fg/UWLSPv8bV65ziOAJcEFyuKdeJRqhFU1whsY7qSQZAoGBANkL\nrHWW7k3x5iukhAIrbu8R0jgBWb5NYb5BCi/IMmU3ogjrOFpQepfRaKtq3IgoxQCa\nuMRfsl8H+g2P3wWyHfE7JqdxCgQpLO2BlAEhj0YQgPmak9OILHZPgmRdCvtOsYqb\n2EMx01/uq4T1Ln2RnrH8x2nwPIFp/0stLqUixpQhAoGBAOvog6iEIIg/vbRe174M\nltAkTSldbOPtftsu1t0GW3+rKxJWfikXR8CeSN0pOLrqCP6wEv5l2OPfAhNgVSLC\nA641CWCXS6sajZH2BZGHg/oKrMIyVSCRUIKyVtNC6OMeufs7lH99xstSfvrX0HCf\nWhHpTKw9qD4j1ttWufnfpSpD\n-----END PRIVATE KEY-----\n","user":{"id":5,"email":"idinha@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3VrRGTIQZHtifaB2kfqg\njlCnbg7FHJUQJy/nfNo4TejIC+BJz4YqkmnqOWzNhpW19R3m/sXqqGZePUlmPPXb\nHIhAsTauOR+tFgTywr6tHgbQSXCGQVyAxa5khskBNkFt5pH44pnFUgRPbdI/m775\nREWwRofKacNFYkJ90rsyHN9++q/RPRyvUElMXX1tdkRphVmhhl3JR1rlPYCSydhO\nGt2pSCGo6TzOAVOwFFSCCXB9/p9lWBB9H67+3DGen6/lVQYKrdX8au8moI4oULf+\nGqDO2OV0SfI6MuRW5gXoe/LmQLD6doGAQ9HA2opnfUDYS1d22rsa3Wque4qoATcY\nJQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-13T11:12:42.490Z"}}
+11:12:42 AM [express] GET /api/auth/profile 200 in 2ms :: {"id":5,"email":"idinha@gmail.com","publicKey":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3VrRGTIQZHtifaB2kfqg\njlCnbg7FHJUQJy/nfNo4TejIC+BJz4YqkmnqOWzNhpW19R3m/sXqqGZePUlmPPXb\nHIhAsTauOR+tFgTywr6tHgbQSXCGQVyAxa5khskBNkFt5pH44pnFUgRPbdI/m775\nREWwRofKacNFYkJ90rsyHN9++q/RPRyvUElMXX1tdkRphVmhhl3JR1rlPYCSydhO\nGt2pSCGo6TzOAVOwFFSCCXB9/p9lWBB9H67+3DGen6/lVQYKrdX8au8moI4oULf+\nGqDO2OV0SfI6MuRW5gXoe/LmQLD6doGAQ9HA2opnfUDYS1d22rsa3Wque4qoATcY\nJQIDAQAB\n-----END PUBLIC KEY-----\n","quotaTotal":524288000,"quotaUsed":0,"createdAt":"2026-03-13T11:12:42.490Z"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1;1H[0J[2m11:12:46 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/files/DownloadDialog.tsx, /src/index.css[22m
